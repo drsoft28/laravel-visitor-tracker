@@ -16,7 +16,7 @@ then you can migrate
 # Usage
 you should visitor tracker middlewire in kernel.php in middleware global or web as you like
 
-`\Drsoft\VisitorTracker\VisitorTrackerMiddleware::class`
+`\Drsoft\VisitorTracker\Middleware\VisitorTrackerMiddleware::class`
 
 
 `
@@ -28,6 +28,6 @@ you should visitor tracker middlewire in kernel.php in middleware global or web 
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \Drsoft\VisitorTracker\VisitorTrackerMiddleware::class,
+            \Drsoft\VisitorTracker\Middleware\VisitorTrackerMiddleware::class,
         ],
 `

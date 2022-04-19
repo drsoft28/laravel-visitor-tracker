@@ -20,9 +20,11 @@ class CreateVisitorTrackersTable extends Migration
             $table->string('full_url')->nullable();
             $table->string('route_name')->nullable();
             $table->json('route_params')->nullable();
+            $table->json('request_info')->nullable();
             $table->string('ip')->nullable();
             $table->string('country_name')->nullable();
             $table->string('country_code')->nullable();
+            $table->string('region_name')->nullable();
             $table->string('region_code')->nullable();
             $table->string('city_name')->nullable();
             $table->string('zip_code')->nullable();
