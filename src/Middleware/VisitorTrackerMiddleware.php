@@ -12,6 +12,13 @@ class VisitorTrackerMiddleware
 
     public function handle(Request $request, Closure $next)
     {
+        
+            if(empty($_SERVER['HTTP_USER_AGENT']) || strpos($_SERVER['HTTP_USER_AGENT'], 'bot') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'spider') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'crawler') !== false)
+            {
+                //most likely fake traffic
+                return $next($request);
+            }
+        
         $expect_routes = config('visitortracker.routes');
 
         if($expect_routes && is_array($expect_routes)){
