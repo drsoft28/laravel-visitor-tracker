@@ -13,7 +13,7 @@ Publish the configuration file (this will create a visitor-tracker.php file insi
 then you can migrate  
 `php artisan migrate` 
 
-# Usage
+
 you should visitor tracker middlewire in kernel.php in middleware global or web as you like
 
 `\Drsoft\VisitorTracker\Middleware\VisitorTrackerMiddleware::class`
@@ -31,3 +31,30 @@ you should visitor tracker middlewire in kernel.php in middleware global or web 
             \Drsoft\VisitorTracker\Middleware\VisitorTrackerMiddleware::class,
         ],
 `
+# Usage
+
+this packahe fill in table visitor tracker ( see config file to know which model use)
+model by default
+
+`\Drsoft\VisitorTracker\Models\VisitorTracker`
+
+## columns
+ 
+ - ip
+ - path
+ - full_url
+ - url
+ - country_name
+ - country_code
+ - region_name
+ - region_code
+ - city_name
+ - zip_code
+ - iso_code
+ - latitude
+ - longitude
+ - timezone
+ - referer
+ - route_name
+ - route_params
+ - request_info (json columns, it's depond on config('visitor-tracker.headers'))
