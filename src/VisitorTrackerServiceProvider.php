@@ -24,11 +24,11 @@ class VisitorTrackerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/visitor-tracker.php', 'visitor-tracker'
+            __DIR__.'/config/visitortracker.php', 'visitortracker'
         );
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->publishes([
-            __DIR__.'/config/visitor-tracker.php' => config_path('visitor-tracker.php'),
+            __DIR__.'/config/visitortracker.php' => config_path('visitortracker.php'),
             __DIR__.'/migrations' => base_path('database/migrations'),
         ]);
     }
