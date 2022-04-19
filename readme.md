@@ -40,6 +40,7 @@ model by default
 
 ## columns
  
+ - user_id
  - ip
  - path
  - full_url
@@ -57,4 +58,4 @@ model by default
  - referer
  - route_name
  - route_params
- - request_info (json columns, it's depond on config('visitor-tracker.headers'))
+ - request_info (json columns, it's depond on `config('visitor-tracker.headers')`)
