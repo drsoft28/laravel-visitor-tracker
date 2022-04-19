@@ -4,7 +4,7 @@ this package providers you to able track guest or user on your web application
 
 # installion
 
-`composer require drsoft/visitor-tracker`
+`composer require drsoft/visitortracker`
 
 Publish the configuration file (this will create a visitor-tracker.php file inside the config/ directory and file migration for table visitor_trackers inside database/migrations):
 
@@ -58,4 +58,4 @@ model by default
  - referer
  - route_name
  - route_params
- - request_info (json columns, it's depond on `config('visitor-tracker.headers')`)
+ - request_info (json columns, it's depond on `config('visitortracker.headers')`)
