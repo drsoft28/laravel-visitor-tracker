@@ -12,7 +12,7 @@ class VisitorTrackerMiddleware
 
     public function handle(Request $request, Closure $next)
     {
-        $expect_routes = config('visitor-tracker.routes');
+        $expect_routes = config('visitortracker.routes');
 
         if($expect_routes && is_array($expect_routes)){
             $ok = true;
@@ -23,7 +23,7 @@ class VisitorTrackerMiddleware
             if(!$ok) return $next($request);
         }
 
-        $expect_paths = config('visitor-tracker.paths');
+        $expect_paths = config('visitortracker.paths');
 
         if($expect_paths && is_array($expect_paths)){
             $ok = true;
@@ -34,7 +34,7 @@ class VisitorTrackerMiddleware
             if(!$ok) return $next($request);
         }
         $request_info=[];
-        $headers = config('visitor-tracker.headers');
+        $headers = config('visitortracker.headers');
 
         if($headers && is_array($headers)){
             
@@ -54,7 +54,7 @@ class VisitorTrackerMiddleware
             $route_params = $route->parameters();
         }
         
-        $model = config('visitor-tracker.model');
+        $model = config('visitortracker.model');
 
         $tracker = new $model();
         $tracker->user_id = auth()->check()?auth()->user()->id:null;
