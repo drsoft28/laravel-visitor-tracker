@@ -1,0 +1,33 @@
+{
+    "name": "drsoft/visitor-tracker",
+    "keywords": [
+        "framework",
+        "laravel",
+        "visitor tracker"
+       
+    ],
+    "require": {
+        "illuminate/support": "~8",
+        "stevebauman/location": "^6.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Drsoft\\VisitorTracker\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Drsoft\\VisitorTracker\\VisitorTrackerServiceProvider"
+            ]
+            
+        }
+    },
+    "authors": [
+        {
+            "name": "rabie dif",
+            "email": "dif.rabie@gmail.com"
+        }
+    ]
+}
