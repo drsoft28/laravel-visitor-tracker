@@ -7,17 +7,21 @@ use Illuminate\Http\Request;
 use App\Models\Tracker;
 use Stevebauman\Location\Facades\Location;
 use Illuminate\Support\Facades\Route;
+use Jaybizzle\CrawlerDetect\CrawlerDetect;
 class VisitorTrackerMiddleware
 {
 
     public function handle(Request $request, Closure $next)
     {
+        if(app(CrawlerDetect::class)->isCrawler()){
+            return $next($request);
+        }
         
-            if(empty($_SERVER['HTTP_USER_AGENT']) || strpos($_SERVER['HTTP_USER_AGENT'], 'bot') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'spider') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'crawler') !== false)
+           /* if(empty($_SERVER['HTTP_USER_AGENT']) || strpos($_SERVER['HTTP_USER_AGENT'], 'bot') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'spider') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'crawler') !== false)
             {
                 //most likely fake traffic
                 return $next($request);
-            }
+            }*/
         
         $expect_routes = config('visitortracker.routes');
 

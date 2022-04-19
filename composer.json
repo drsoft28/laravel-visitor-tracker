@@ -8,6 +8,7 @@
     ],
     "require": {
         "illuminate/support": "~8",
+        "jaybizzle/crawler-detect": "^1.2",
         "stevebauman/location": "^6.4"
     },
     "license": "MIT",
