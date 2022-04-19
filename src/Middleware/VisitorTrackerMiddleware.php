@@ -20,7 +20,7 @@ class VisitorTrackerMiddleware
                 $ok= ! request()->routeIs($value);
                 if(!$ok) break; 
             }
-            if(!$ok) $next($request);
+            if(!$ok) return $next($request);
         }
 
         $expect_paths = config('visitor-tracker.paths');
@@ -31,7 +31,7 @@ class VisitorTrackerMiddleware
                 $ok= ! request()->is($value);
                 if(!$ok) break; 
             }
-            if(!$ok) $next($request);
+            if(!$ok) return $next($request);
         }
         $request_info=[];
         $headers = config('visitor-tracker.headers');
