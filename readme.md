@@ -6,7 +6,7 @@ this package providers you to able track guest or user on your web application
 
 `composer require drsoft/visitortracker`
 
-Publish the configuration file (this will create a visitor-tracker.php file inside the config/ directory and file migration for table visitor_trackers inside database/migrations):
+Publish the configuration file (this will create a visitortracker.php file inside the config/ directory and file migration for table visitor_trackers inside database/migrations):
 
 `php artisan vendor:publish --provider="Drsoft\VisitorTracker\VisitorTrackerServiceProvider"`
 
@@ -59,3 +59,11 @@ model by default
  - route_name
  - route_params
  - request_info (json columns, it's depond on `config('visitortracker.headers')`)
+
+ ## methods in Model VisitorTracker
+
+  - visitorsWithinSeconds($seconds)
+
+  - visitorsWithinMinutes($minutes)
+
+  - visitorsWithinHours($hours)
