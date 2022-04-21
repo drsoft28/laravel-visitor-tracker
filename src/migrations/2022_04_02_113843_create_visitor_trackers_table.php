@@ -36,7 +36,7 @@ class CreateVisitorTrackersTable extends Migration
             $table->string('area_code')->nullable();
             $table->string('timezone')->nullable();
             $table->string('referer')->nullable();
-            $table->unsignedBigInteger("user_id")->default(0);
+            $table->unsignedBigInteger("user_id")->nullable();
             $table->unsignedBigInteger('createdby')->nullable();
             $table->unsignedBigInteger('updatedby')->nullable();
             $table->timestamps();
