@@ -1,5 +1,5 @@
 {
-    "name": "drsoft/visitor-tracker",
+    "name": "drsoft28/visitor-tracker",
     "keywords": [
         "framework",
         "laravel",
@@ -14,13 +14,13 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Drsoft\\VisitorTracker\\": "src/"
+            "Drsoft28\\VisitorTracker\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Drsoft\\VisitorTracker\\VisitorTrackerServiceProvider"
+                "Drsoft28\\VisitorTracker\\VisitorTrackerServiceProvider"
             ]
             
         }

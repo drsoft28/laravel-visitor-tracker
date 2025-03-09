@@ -4,11 +4,11 @@ this package providers you to able track guest or user on your web application
 
 # installion
 
-`composer require drsoft/visitortracker`
+`composer require drsoft28/visitortracker`
 
 Publish the configuration file (this will create a visitortracker.php file inside the config/ directory and file migration for table visitor_trackers inside database/migrations):
 
-`php artisan vendor:publish --provider="Drsoft\VisitorTracker\VisitorTrackerServiceProvider"`
+`php artisan vendor:publish --provider="Drsoft28\VisitorTracker\VisitorTrackerServiceProvider"`
 
 then you can migrate  
 `php artisan migrate` 
@@ -16,7 +16,7 @@ then you can migrate
 
 you should visitor tracker middlewire in kernel.php in middleware global or web as you like
 
-`\Drsoft\VisitorTracker\Middleware\VisitorTrackerMiddleware::class`
+`\Drsoft28\VisitorTracker\Middleware\VisitorTrackerMiddleware::class`
 
 
 `
@@ -28,15 +28,26 @@ you should visitor tracker middlewire in kernel.php in middleware global or web 
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \Drsoft\VisitorTracker\Middleware\VisitorTrackerMiddleware::class,
+            \Drsoft28\VisitorTracker\Middleware\VisitorTrackerMiddleware::class,
         ],
+`
+
+In Laravel 11 and later  in bootsrap/app.php
+
+`
+ ->withMiddleware(function (Middleware $middleware) {
+       
+        $middleware->web(append: [
+		\Drsoft28\VisitorTracker\Middleware\VisitorTrackerMiddleware::class,
+		]);
+		})
 `
 # Usage
 
 this packahe fill in table visitor tracker ( see config file to know which model use)
 model by default
 
-`\Drsoft\VisitorTracker\Models\VisitorTracker`
+`\Drsoft28\VisitorTracker\Models\VisitorTracker`
 
 ## columns
  
