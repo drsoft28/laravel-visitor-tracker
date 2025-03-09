@@ -4,14 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVisitorTrackersTable extends Migration
+class new class extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+    public function up():void
     {
         Schema::create('visitor_trackers', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -50,7 +50,7 @@ class CreateVisitorTrackersTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down():void
     {
         Schema::dropIfExists('visitor_trackers');
     }
