@@ -11,7 +11,7 @@ return [
     | This value is the model of your visitor tracker table.
     */
 
-    'model' => \Drsoft\VisitorTracker\Models\VisitorTracker::class,
+    'model' => \Drsoft28\VisitorTracker\Models\VisitorTracker::class,
 
     /*
     |--------------------------------------------------------------------------
