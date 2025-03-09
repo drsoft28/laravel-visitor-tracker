@@ -69,6 +69,9 @@ class VisitorTrackerMiddleware
 
         $tracker = new $model();
         $tracker->user_id = auth()->check()?auth()->user()->id:null;
+        $tracker->host_schema = $request->getScheme();
+        $tracker->host = $request->getHost();
+        $tracker->host = $request->getHost();
         $tracker->path = $request->path();
         $tracker->url = $request->url();
         $tracker->full_url = $request->fullUrl();

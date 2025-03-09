@@ -15,6 +15,8 @@ class CreateVisitorTrackersTable extends Migration
     {
         Schema::create('visitor_trackers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('host_schema')->nullable();
+            $table->string('host')->nullable();
             $table->string('path')->nullable();
             $table->string('url')->nullable();
             $table->string('full_url')->nullable();
