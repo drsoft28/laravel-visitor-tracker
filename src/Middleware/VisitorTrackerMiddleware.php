@@ -66,8 +66,26 @@ class VisitorTrackerMiddleware
         }
         
         $model = config('visitortracker.model');
-
-        $tracker = new $model();
+		$tracker = new $model();
+			if($route_params === null){
+				$tracker->route_params = null;
+			}
+			else
+			if (is_string($route_params) {
+				// Check if the string is valid JSON
+				json_decode($route_params);
+				if (json_last_error() === JSON_ERROR_NONE) {
+					// It's already a JSON string, so no need to encode it again
+					$tracker->route_params = $route_params;
+				} else {
+					// It's not a JSON string, so encode it
+					$tracker->route_params = json_encode($route_params);
+				}
+			} else {
+				// It's not a string, so encode it
+				$tracker->route_params = json_encode($route_params);
+			}
+        
         $tracker->user_id = auth()->check()?auth()->user()->id:null;
         $tracker->host_schema = $request->getScheme();
         $tracker->host = $request->getHost();
