@@ -1,6 +1,6 @@
 <?php
 
-namespace Drsoft\VisitorTracker\Middleware;
+namespace Drsoft28\VisitorTracker\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

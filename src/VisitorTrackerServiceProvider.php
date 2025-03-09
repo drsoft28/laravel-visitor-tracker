@@ -1,6 +1,6 @@
 <?php
 
-namespace Drsoft\VisitorTracker;
+namespace Drsoft28\VisitorTracker;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drsoft\VisitorTracker\Traits;
+namespace Drsoft28\VisitorTracker\Traits;
 
 trait VisitorTrackerTrait{
     public function scopeVisitorsWithinSeconds($query, $seconds)

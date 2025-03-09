@@ -1,6 +1,6 @@
 <?php
 
-namespace Drsoft\VisitorTracker\Models;
+namespace Drsoft28\VisitorTracker\Models;
 
 //use App\Models\ModelBase;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
