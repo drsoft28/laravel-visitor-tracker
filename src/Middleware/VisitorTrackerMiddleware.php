@@ -54,8 +54,8 @@ class VisitorTrackerMiddleware
            
         }
             
-        
-        $position = Location::get(request()->ip());
+        $ip = $request->header('CF-Connecting-IP') ?? $request->ip();// add this when using cloudfare,proxies
+        $position = Location::get($ip);
         $route = Route::getRoutes()->match($request);
             $route_name = null;
             $route_params = null;
