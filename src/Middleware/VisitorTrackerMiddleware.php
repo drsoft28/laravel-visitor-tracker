@@ -54,7 +54,7 @@ class VisitorTrackerMiddleware
            
         }
             
-		$ip = getRealIp($request);
+		$ip = $this->getRealIp($request);
 		
         $position = Location::get($ip);
         $route = Route::getRoutes()->match($request);
