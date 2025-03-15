@@ -54,7 +54,8 @@ class VisitorTrackerMiddleware
            
         }
             
-        $ip = $request->header('CF-Connecting-IP') ?? $request->ip();// add this when using cloudfare,proxies
+		$ip = getRealIp($request);
+		
         $position = Location::get($ip);
         $route = Route::getRoutes()->match($request);
             $route_name = null;
@@ -98,4 +99,12 @@ class VisitorTrackerMiddleware
         
         return $next($request);
     }
+
+function getRealIp(Request $request)
+{
+    return $request->header('CF-Connecting-IP') // Cloudflare
+        ?? $request->header('X-Forwarded-For') // Common Proxies
+        ?? $request->header('X-Real-IP') // Nginx Reverse Proxy
+        ?? $request->server('REMOTE_ADDR'); // Default Laravel Method
+}
 }
