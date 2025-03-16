@@ -76,7 +76,7 @@ class VisitorTrackerMiddleware
         $tracker->path = $request->path();
         $tracker->url = $request->url();
         $tracker->full_url = $request->fullUrl();
-        $tracker->ip = $request->ip();
+        $tracker->ip = $ip;
         $tracker->route_name = $route_name;
         $tracker->route_params = $route_params;
         $tracker->request_info = json_encode( $request_info);
